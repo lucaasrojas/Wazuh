@@ -1,5 +1,5 @@
 import axios from "axios"
-const basePath = "https://wazuh-challenge-server.herokuapp.com/"
+const basePath = "https://wazuh-challenge-server.herokuapp.com"
 export const getUsers = () => {
     return axios.get(`${basePath}/api/users`)
     .then(({data}) => data)
