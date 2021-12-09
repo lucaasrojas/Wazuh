@@ -1,5 +1,3 @@
-import React from 'react';
-import { screen, render, cleanup, fireEvent } from '@testing-library/react'
 import 'regenerator-runtime/runtime'
 import Enzyme from 'enzyme'
 import EnzymeAdapter from 'enzyme-adapter-react-16'

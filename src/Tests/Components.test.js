@@ -1,21 +1,15 @@
-import React from 'react'
-import { render, queryByAttribute, fireEvent, act, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom'
 import { UserCard, TaskCard } from '../Components';
-import { getUsers, getUserById, getTasksByUser } from '../Api/index'
 import 'regenerator-runtime/runtime'
 import Enzyme from 'enzyme'
 import EnzymeAdapter from 'enzyme-adapter-react-16'
 import "@testing-library/jest-dom";
-import axios from 'axios'
-import { mockComponent } from 'react-dom/test-utils';
-const basePath = "https://wazuh-challenge-server.herokuapp.com"
 Enzyme.configure({
     adapter: new EnzymeAdapter()
 })
 jest.mock('axios');
 jest.mock('../Api')
-const getById = queryByAttribute.bind(null, 'id')
 
 describe("UserCard component", () => {
     const mockedUser = {
