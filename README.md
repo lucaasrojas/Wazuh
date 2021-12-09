@@ -15,3 +15,4 @@ TODO:
 - Move Filters to a new component
 - Review pagination edge cases (even and odd lists, changes of filters in an N page)
 - Try changing to boiler plate to see if it improves the development and performance
+- Use .env for request path
