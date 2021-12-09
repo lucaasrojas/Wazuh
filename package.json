@@ -1,0 +1,19 @@
+{
+  "name": "wazuh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucaasrojas/Wazuh.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucaasrojas/Wazuh/issues"
+  },
+  "homepage": "https://github.com/lucaasrojas/Wazuh#readme"
+}
