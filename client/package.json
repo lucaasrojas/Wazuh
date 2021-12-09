@@ -60,5 +60,8 @@
   },
   "devDependencies": {
     "@webpack-cli/serve": "^1.6.0"
+  },
+  "engines" : { 
+    "node" : ">=8.0.0 <11.0.0" 
   }
 }
