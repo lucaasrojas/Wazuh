@@ -4,9 +4,9 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 	mode: "development",
-	entry: __dirname + "/src/index.tsx",
+	entry: "./src/index.tsx",
 	output: {
-		path: __dirname + "dist/",
+		path: path.resolve(__dirname, "dist/"),
 		filename: "bundle.js"
 	},
 	module: {
@@ -33,7 +33,7 @@ module.exports = {
 	},
 	resolve: { extensions: ["*", ".js", ".jsx", ".tsx"] },
 	devServer: {
-		contentBase: "./public",
+		contentBase: path.join(__dirname, "public/"),
 		port: 8080,
 		hotOnly: true,
 		historyApiFallback: true,
@@ -42,8 +42,8 @@ module.exports = {
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebPackPlugin({
-			template: __dirname + "/public/index.html",
-			filename: "index.html"
-		})
+            template: "./public/index.html",
+            filename: "./index.html"
+        })
 	]
 };
