@@ -2,13 +2,12 @@
   "name": "users-tasks",
   "version": "1.0.0",
   "description": "",
-  "main": "index.tsx",
   "scripts": {
     "test": "jest --coverage --colors -u",
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "serve": "webpack serve --mode development"
   },
-  "proxy": "http://localhost:8000",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -35,6 +34,8 @@
     "babel-loader": "^8.0.2",
     "concurrently": "^6.4.0",
     "css-loader": "^1.0.0",
+    "dotenv": "^10.0.0",
+    "dotenv-webpack": "^7.0.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "eslint-plugin-jest": "^24.4.0",

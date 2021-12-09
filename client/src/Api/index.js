@@ -1,5 +1,5 @@
 import axios from "axios"
-const basePath = process.env.NODE_ENV === 'development' ? process.env.DEV_PATH : process.env.PROD_PATH
+const basePath = "https://wazuh-challenge-server.herokuapp.com/"
 export const getUsers = () => {
     return axios.get(`${basePath}/api/users`)
     .then(({data}) => data)
