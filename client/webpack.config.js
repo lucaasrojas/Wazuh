@@ -43,8 +43,7 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebPackPlugin({
 			template: __dirname + "/public/index.html",
-			filename: "index.html",
-			inject: "body"
+			filename: "index.html"
 		})
 	]
 };
