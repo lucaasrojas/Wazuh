@@ -5,7 +5,6 @@ import Enzyme from 'enzyme'
 import EnzymeAdapter from 'enzyme-adapter-react-16'
 import "@testing-library/jest-dom";
 import { getTasks, getTasksByUser, getUserById, getUsers } from '../Api'
-import { default as Services } from '../Api/serverServices'
 import axios from 'axios'
 const basePath = "https://wazuh-challenge-server.herokuapp.com"
 Enzyme.configure({

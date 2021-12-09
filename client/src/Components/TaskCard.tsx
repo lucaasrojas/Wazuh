@@ -10,8 +10,7 @@ const useStyles = makeStyles({
     taskBullet: {
         width: 20, 
         height: "100%", 
-        borderRadius: "4px 0px 0px 4px", 
-        backgroundColor: (task : TaskInterface) => task.completed ? "green" : "gray"
+        borderRadius: "4px 0px 0px 4px"
     }
 })
 
@@ -25,7 +24,7 @@ const TaskCard : React.FunctionComponent<TaskCardProps>  = (props) => {
     return props.task ? (
         <Grid key={props.task.id} container spacing={1} className={classes.wrapper}>
             <Grid item>
-                <div className={classes.taskBullet}></div>
+                <div id={`task-${props.task.id}-bullet`} className={classes.taskBullet} style={{backgroundColor: props.task.completed ? "green" : "gray"}}></div>
             </Grid>
             <Grid item>
                 {props.task.title}

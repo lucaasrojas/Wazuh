@@ -36,7 +36,7 @@ const Users = () => {
             <Grid container spacing={3} item xs={12} md={12}>
                 {
                     usersListFiltered.map((el : UserInterface) => (
-                        <Grid item xs={12} sm={4} md={4}>
+                        <Grid key={el.id} item xs={12} sm={4} md={4}>
                             <UserCard user={el} />
                         </Grid>
                     ))
