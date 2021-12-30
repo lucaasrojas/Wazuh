@@ -1,15 +1,16 @@
 import React from 'react';
-import { CardContent, Typography, Paper, Divider, Grid } from '@mui/material'
-import { Link, useParams } from 'react-router-dom'
-import { makeStyles } from '@mui/styles';
-import { TaskCard } from '.'
+import { Typography, Divider, Grid } from '@mui/material'
+import { useParams } from 'react-router-dom'
+import { TaskCard } from '..'
 import EmailIcon from '@mui/icons-material/Email';
 import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import PublicIcon from '@mui/icons-material/Public';
-import * as api from '../Api/index'
+import * as api from '../../Api/index'
 import TaskInterface from 'Assets/Interfaces/TaskInterface'
 import UserInterface from 'Assets/Interfaces/UserInterface'
+import useClasses from './styles'
+
 interface DataCardInterface {
     icon: React.ReactElement,
     text: string | React.ReactElement
@@ -39,6 +40,7 @@ const UserDetail = () => {
     const [userData, setUserData] = React.useState<UserInterface | undefined>()
     const [userTasks, setUserTasks] = React.useState<TaskInterface[]>([])
     const params : QueryParams = useParams()
+    const classes = useClasses()
     React.useEffect(() => {
         api.getUserById({ id: params.id })
             .then(res => setUserData(res))
@@ -50,12 +52,12 @@ const UserDetail = () => {
 
     return userData ? (
 
-        <Grid container style={{ maxWidth: 480, margin: "0 auto", justifyContent: "center" }}>
+        <Grid container className={classes.mainWrapper}>
             <Grid item xs={12} md={12}>
-                <Typography variant="h6" style={{ fontSize: "100%", maxWidth: "100%" }} >
+                <Typography variant="h6" className={classes.userName} >
                     <strong>{userData.name}</strong>
                 </Typography>
-                <Divider style={{ margin: "10px 0px" }} />
+                <Divider className={classes.divider} />
             </Grid>
 
             <Grid item xs={12} md={12}>
@@ -70,7 +72,7 @@ const UserDetail = () => {
             </Grid>
 
             <Grid item xs={12} md={6}>
-                <DataCard icon={<PersonalVideoIcon />} text={<a style={{ textDecoration: "none", color: "inherit" }} href={userData.website}>{userData.website}</a>} />
+                <DataCard icon={<PersonalVideoIcon />} text={<a className={classes.personalVideoText} href={userData.website}>{userData.website}</a>} />
             </Grid>
 
             <Grid item xs={12} md={6}>

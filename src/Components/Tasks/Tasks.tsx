@@ -1,12 +1,13 @@
 import React from 'react'
-import * as api from '../Api/index'
+import * as api from '../../Api/index'
 import {
     Grid, Input, FormGroup, FormControlLabel,
     Checkbox, FormControl, Select, MenuItem, InputLabel, Pagination
 } from '@mui/material'
-import { TaskCard } from '.'
+import { TaskCard } from '..'
 import TaskInterface from 'Assets/Interfaces/TaskInterface'
 import UserInterface from 'Assets/Interfaces/UserInterface'
+import useClasses from './styles'
 
 interface TasksResponse {
     total_items: number,
@@ -20,7 +21,7 @@ const Tasks = () => {
     const [completed, setCompleted] = React.useState(false)
     const [searchValue, setSearchValue] = React.useState("")
     const [pagination, setPagination] = React.useState({ offset: 0, page: 1, limit: 10 })
-    
+    const classes = useClasses()
     React.useEffect(() => {
         api.getUsers()
             .then(({ data }) => setUsersList(data))
@@ -43,17 +44,18 @@ const Tasks = () => {
     }
 
     return tasks && tasks.data ? (
-        <Grid container spacing={4} style={{ maxWidth: 968, margin: "0 auto", }}>
-            <Grid item container spacing={2} xs={12} md={12} style={{ display: "flex" }}>
-                <Grid item xs={12} md={2} style={{ display: "flex", alignItems: "center" }}>
+        <Grid container spacing={4} className={classes.mainWrapper}>
+
+            <Grid item container spacing={2} xs={12} md={12} className={classes.filterMainWrapper}>
+                <Grid item xs={12} md={2} className={classes.filterCheckboxWrapper}>
                     <FormGroup>
                         <FormControlLabel control={<Checkbox checked={completed} onChange={(res) => setCompleted(res.target.checked)} />} label="Completed" />
                     </FormGroup>
                 </Grid>
-                <Grid item xs={12} md={7} style={{ display: "flex", justifyContent: "center" }}>
+                <Grid item xs={12} md={7} className={classes.filterInputWrapper}>
                     <Input fullWidth value={searchValue} onChange={handleSearch} placeholder="Search" />
                 </Grid>
-                <Grid item xs={12} md={3} style={{ display: "flex", justifyContent: "center" }}>
+                <Grid item xs={12} md={3} className={classes.filterUserSelect}>
                     <FormControl variant="standard" fullWidth>
                         <InputLabel id="user-filterl">User</InputLabel>
                         <Select
@@ -84,7 +86,7 @@ const Tasks = () => {
                     ))
                 }
             </Grid>
-            <Grid item xs={12} md={12} style={{ display: "flex", justifyContent: "center" }}>
+            <Grid item xs={12} md={12} className={classes.paginationWrapper}>
                 <Pagination
                     count={tasks.total_items / pagination.limit}
                     onChange={handlePagination}
