@@ -13,12 +13,26 @@ export default makeStyles({
         textAlign: "center"
     },
     divider: {
-        margin: "10px 0px"
+        margin: "10px 0px !important"
+    },
+    titleWrapper:{
+        display: "flex",
+        flexDirection: "column"
     },
     nameLabel: {
         fontSize: "100%", maxWidth: "100%"
     },
     label: {
-        overflowWrap: "anywhere"
+        overflow: "hidden"
+    },
+    card: {
+        minHeight: 200,
+        padding: 8,
+        display: "flex",
+        flexDirection: "column"
+    },
+    cardContent: {
+        marginTop: "auto",
+        marginBottom: "auto",
     }
 })
