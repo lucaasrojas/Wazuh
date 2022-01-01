@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography } from '@mui/material'
+import { Grid } from '@mui/material'
 import TaskInterface from '../../Assets/Interfaces/TaskInterface'
 import useClasses from './styles'
 
@@ -14,7 +14,7 @@ const TaskCard : React.FunctionComponent<TaskCardProps>  = (props) => {
             <Grid item>
                 <div id={`task-${props.task.id}-bullet`} className={classes.taskBullet}></div>
             </Grid>
-            <Grid item>
+            <Grid item xs>
                 <p className={classes.taskTitle}>
                     {props.task.title}
                 </p>

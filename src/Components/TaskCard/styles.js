@@ -10,7 +10,7 @@ export default makeStyles({
         width: 20, 
         height: "100%", 
         borderRadius: "4px 0px 0px 4px",
-        backgroundColor: ({completed}) => completed ? "green" : "gray"
+        backgroundColor: (task) => task.completed ? "green" : "gray"
     },
     taskTitle: {
         margin: 0,
