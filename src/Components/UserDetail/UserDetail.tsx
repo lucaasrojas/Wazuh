@@ -37,18 +37,26 @@ interface QueryParams {
 }
 
 const UserDetail : React.FunctionComponent = (props) => {
-    console.log("USER DETAIL", props)
-    const [userData, setUserData] = React.useState<UserInterface | undefined>()
+
+    const [userData, setUserData] = React.useState<UserInterface | void | undefined>()
+    const [error, setError] = React.useState<any | undefined>()
     const [userTasks, setUserTasks] = React.useState<TaskInterface[]>([])
     const params : QueryParams = useParams()
     const classes = useClasses()
     React.useEffect(() => {
         api.getUserById({ id: params.id })
-            .then(res => setUserData(res))
+            .then(res => setUserData(res.data))
+            .catch(({response}) => setError(response.data))
 
         api.getTasksByUser({ id: params.id })
             .then(res => setUserTasks(res.data))
     }, [])
+    console.log("MAIN ERROR", error)
+    if(error) return (
+        <div>
+            Error: {error.message}
+        </div>
+    )
 
     return userData ? (
 
