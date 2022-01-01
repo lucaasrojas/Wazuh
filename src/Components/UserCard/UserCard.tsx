@@ -2,7 +2,7 @@
 import React from 'react';
 import { CardContent, Typography, Paper, Divider, Card, Grid } from '@mui/material'
 import { Link } from 'react-router-dom'
-import UserInterface from 'Assets/Interfaces/UserInterface'
+import UserInterface from '../../Assets/Interfaces/UserInterface'
 import useClasses from './styles'
 
 interface UserCardProps {

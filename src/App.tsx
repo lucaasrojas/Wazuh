@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
 import Router from './Assets/Routes'
-import { hot } from "react-hot-loader";
 import { ResponsiveWrapper } from "./Components";
 
 const App = () => {
+	console.log("APP")
 	return (
 		<div className="App">
 			<ResponsiveWrapper>
@@ -14,4 +14,4 @@ const App = () => {
 	);
 };
 
-export default hot(module)(App);
+export default App;

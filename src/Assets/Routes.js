@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Users, Tasks, Layout, UserDetail } from "../Components";
 
 const routes = () => {
@@ -7,12 +7,12 @@ const routes = () => {
 	return (
 		<BrowserRouter>
 			<Layout>
-				<Switch>
-					<Route path="/users/:id" component={UserDetail} />
-					<Route path="/users" component={Users} />
-					<Route path="/tasks" component={Tasks} />
-					<Route path="/" component={Tasks} />
-				</Switch>
+				<Routes>
+					<Route path="/users/:id" element={<UserDetail />} />
+					<Route path="/users" element={<Users />} />
+					<Route path="/tasks" element={<Tasks />} />
+					<Route path="/" element={<Tasks />} />
+				</Routes>
 			</Layout>
 		</BrowserRouter>
 	);

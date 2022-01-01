@@ -5,8 +5,8 @@ import {
     Checkbox, FormControl, Select, MenuItem, InputLabel, Pagination
 } from '@mui/material'
 import { TaskCard } from '..'
-import TaskInterface from 'Assets/Interfaces/TaskInterface'
-import UserInterface from 'Assets/Interfaces/UserInterface'
+import TaskInterface from '../../Assets/Interfaces/TaskInterface'
+import UserInterface from '../../Assets/Interfaces/UserInterface'
 import useClasses from './styles'
 
 interface TasksResponse {

@@ -7,8 +7,8 @@ import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import PublicIcon from '@mui/icons-material/Public';
 import * as api from '../../Api/index'
-import TaskInterface from 'Assets/Interfaces/TaskInterface'
-import UserInterface from 'Assets/Interfaces/UserInterface'
+import TaskInterface from '../../Assets/Interfaces/TaskInterface'
+import UserInterface from '../../Assets/Interfaces/UserInterface'
 import useClasses from './styles'
 
 interface DataCardInterface {
@@ -33,10 +33,11 @@ const DataCard : React.FunctionComponent<DataCardInterface> = ({ icon, text }) =
 }
 
 interface QueryParams {
-    id: string
+    id?: string
 }
 
-const UserDetail = () => {
+const UserDetail : React.FunctionComponent = (props) => {
+    console.log("USER DETAIL", props)
     const [userData, setUserData] = React.useState<UserInterface | undefined>()
     const [userTasks, setUserTasks] = React.useState<TaskInterface[]>([])
     const params : QueryParams = useParams()
@@ -48,7 +49,6 @@ const UserDetail = () => {
         api.getTasksByUser({ id: params.id })
             .then(res => setUserTasks(res.data))
     }, [])
-
 
     return userData ? (
 
