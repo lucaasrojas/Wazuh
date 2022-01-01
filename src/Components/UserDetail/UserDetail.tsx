@@ -16,7 +16,7 @@ interface DataCardInterface {
     text: string | React.ReactElement
 }
 
-const DataCard : React.FunctionComponent<DataCardInterface> = ({ icon, text }) => {
+const DataCard: React.FunctionComponent<DataCardInterface> = ({ icon, text }) => {
     return (
         <Grid container spacing={2}>
             <Grid item xs={2} md={2}>
@@ -36,23 +36,25 @@ interface QueryParams {
     id?: string
 }
 
-const UserDetail : React.FunctionComponent = (props) => {
+const UserDetail: React.FunctionComponent = (props) => {
 
     const [userData, setUserData] = React.useState<UserInterface | void | undefined>()
     const [error, setError] = React.useState<any | undefined>()
     const [userTasks, setUserTasks] = React.useState<TaskInterface[]>([])
-    const params : QueryParams = useParams()
+    const params: QueryParams = useParams()
     const classes = useClasses()
     React.useEffect(() => {
         api.getUserById({ id: params.id })
             .then(res => setUserData(res.data))
-            .catch(({response}) => setError(response.data))
-
-        api.getTasksByUser({ id: params.id })
-            .then(res => setUserTasks(res.data))
+            .catch(({ response }) => setError(response.data))
+        if (userData) {
+            api.getTasksByUser({ id: params.id })
+                .then(res => setUserTasks(res.data))
+                .catch(({ response }) => setError(response.data))
+        }
     }, [])
     console.log("MAIN ERROR", error)
-    if(error) return (
+    if (error) return (
         <div>
             Error: {error.message}
         </div>
@@ -98,7 +100,7 @@ const UserDetail : React.FunctionComponent = (props) => {
                     </Typography>
                 </Grid>
                 {
-                    userTasks.map((task : TaskInterface) => (
+                    userTasks.map((task: TaskInterface) => (
                         <Grid key={task.id} item xs={12} md={6}>
                             <TaskCard task={task} />
                         </Grid>

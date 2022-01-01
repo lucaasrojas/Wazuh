@@ -1,6 +1,5 @@
 import axios from "axios"
-const basePath = "https://wazuh-challenge-server.herokuapp.com"
-//const basePath = "http://127.0.0.1:8000"
+const basePath = process.env.REACT_APP_API_PATH // "https://wazuh-challenge-server.herokuapp.com"
 
 export const getUsers = () => {
     return axios.get(`${basePath}/api/users`)
