@@ -4,7 +4,7 @@ import EnzymeAdapter from 'enzyme-adapter-react-16'
 import "@testing-library/jest-dom";
 import { getTasks, getTasksByUser, getUserById, getUsers } from '../Api'
 import axios from 'axios'
-const basePath = "https://wazuh-challenge-server.herokuapp.com"
+const basePath = process.env.REACT_APP_API_PATH
 Enzyme.configure({
     adapter: new EnzymeAdapter()
 })

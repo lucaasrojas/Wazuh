@@ -39,24 +39,27 @@ interface QueryParams {
 const UserDetail: React.FunctionComponent = (props) => {
 
     const [userData, setUserData] = React.useState<UserInterface | void | undefined>()
-    const [error, setError] = React.useState<any | undefined>()
+    const [error, setError] = React.useState<any[]>([])
     const [userTasks, setUserTasks] = React.useState<TaskInterface[]>([])
     const params: QueryParams = useParams()
     const classes = useClasses()
     React.useEffect(() => {
         api.getUserById({ id: params.id })
             .then(res => setUserData(res.data))
-            .catch(({ response }) => setError(response.data))
-        if (userData) {
-            api.getTasksByUser({ id: params.id })
-                .then(res => setUserTasks(res.data))
-                .catch(({ response }) => setError(response.data))
-        }
+            .catch(({ response }) => setError(prev => ([...prev, response.data])))
+        api.getTasksByUser({ id: params.id })
+            .then(res => setUserTasks(res.data))
+            .catch(({ response }) => setError(prev => ([...prev, response.data])))
     }, [])
-    console.log("MAIN ERROR", error)
-    if (error) return (
+
+    if (error.length) return (
         <div>
-            Error: {error.message}
+            Error: 
+            {
+                error.map(err => (
+                    <p>{err.message}</p>
+                ))
+            }
         </div>
     )
 

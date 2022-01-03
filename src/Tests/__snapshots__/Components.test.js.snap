@@ -13,29 +13,37 @@ Object {
           class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation4 makeStyles-paper-2 css-11mde6h-MuiPaper-root"
         >
           <div
-            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+            class="makeStyles-card-7"
           >
-            <h6
-              class="MuiTypography-root MuiTypography-h6 makeStyles-nameLabel-4 css-2ulfj5-MuiTypography-root"
+            <div
+              class="makeStyles-titleWrapper-4"
             >
-              <strong>
-                Leanne Graham
-              </strong>
-            </h6>
-            <hr
-              class="MuiDivider-root MuiDivider-fullWidth makeStyles-divider-3 css-9mgopn-MuiDivider-root"
-            />
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-9eg9l8-MuiTypography-root"
+              <h6
+                class="MuiTypography-root MuiTypography-h6 makeStyles-nameLabel-5 css-2ulfj5-MuiTypography-root"
+              >
+                <strong>
+                  Leanne Graham
+                </strong>
+              </h6>
+              <hr
+                class="MuiDivider-root MuiDivider-fullWidth makeStyles-divider-3 css-9mgopn-MuiDivider-root"
+              />
+            </div>
+            <div
+              class="makeStyles-cardContent-8"
             >
-              @
-              Bret
-            </p>
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-9eg9l8-MuiTypography-root"
-            >
-              Sincere@april.biz
-            </p>
+              <p
+                class="MuiTypography-root MuiTypography-body1 makeStyles-label-6 css-9eg9l8-MuiTypography-root"
+              >
+                @
+                Bret
+              </p>
+              <p
+                class="MuiTypography-root MuiTypography-body1 makeStyles-label-6 css-9eg9l8-MuiTypography-root"
+              >
+                Sincere@april.biz
+              </p>
+            </div>
           </div>
         </div>
       </a>
@@ -50,29 +58,37 @@ Object {
         class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation4 makeStyles-paper-2 css-11mde6h-MuiPaper-root"
       >
         <div
-          class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+          class="makeStyles-card-7"
         >
-          <h6
-            class="MuiTypography-root MuiTypography-h6 makeStyles-nameLabel-4 css-2ulfj5-MuiTypography-root"
+          <div
+            class="makeStyles-titleWrapper-4"
           >
-            <strong>
-              Leanne Graham
-            </strong>
-          </h6>
-          <hr
-            class="MuiDivider-root MuiDivider-fullWidth makeStyles-divider-3 css-9mgopn-MuiDivider-root"
-          />
-          <p
-            class="MuiTypography-root MuiTypography-body1 css-9eg9l8-MuiTypography-root"
+            <h6
+              class="MuiTypography-root MuiTypography-h6 makeStyles-nameLabel-5 css-2ulfj5-MuiTypography-root"
+            >
+              <strong>
+                Leanne Graham
+              </strong>
+            </h6>
+            <hr
+              class="MuiDivider-root MuiDivider-fullWidth makeStyles-divider-3 css-9mgopn-MuiDivider-root"
+            />
+          </div>
+          <div
+            class="makeStyles-cardContent-8"
           >
-            @
-            Bret
-          </p>
-          <p
-            class="MuiTypography-root MuiTypography-body1 css-9eg9l8-MuiTypography-root"
-          >
-            Sincere@april.biz
-          </p>
+            <p
+              class="MuiTypography-root MuiTypography-body1 makeStyles-label-6 css-9eg9l8-MuiTypography-root"
+            >
+              @
+              Bret
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body1 makeStyles-label-6 css-9eg9l8-MuiTypography-root"
+            >
+              Sincere@april.biz
+            </p>
+          </div>
         </div>
       </div>
     </a>

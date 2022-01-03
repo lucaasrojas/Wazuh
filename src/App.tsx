@@ -4,7 +4,6 @@ import Router from './Assets/Routes'
 import { ResponsiveWrapper } from "./Components";
 
 const App = () => {
-	console.log("APP")
 	return (
 		<div className="App">
 			<ResponsiveWrapper>

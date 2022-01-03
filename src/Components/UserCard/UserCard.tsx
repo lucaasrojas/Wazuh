@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CardContent, Typography, Paper, Divider, Card, Grid } from '@mui/material'
+import { Typography, Paper, Divider } from '@mui/material'
 import { Link } from 'react-router-dom'
 import UserInterface from '../../Assets/Interfaces/UserInterface'
 import useClasses from './styles'
